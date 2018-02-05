@@ -1,0 +1,79 @@
+<!doctype html><!--声明文档类型：html-->
+<html lang="en">
+	<head><!--头部-->
+		<meta charset="UTF-8"><!--字符编码:utf-8国际编码-->
+		<meta name="Keywords" content="关键词1,关键词2"><!--关键词-->
+		<meta name="Description" content="描述"><!--描述-->
+		<title>3D立方体-玄武老师</title><!--网页标题-->
+		<style>/* css样式 */
+			body{
+				perspective:1000px;/*景深:视角*/
+			}
+			#cube{/* # id选择器*/
+				position:relative;/*相对定位:参考物*/
+				width:200px;/*宽度*/
+				height:200px;/*高度*/
+				/*border:2px solid red;边框线:宽度 类型(实心的线) 颜色*/
+				margin:300px auto;/*上下间距为300px 左右自动(居中)*/
+				transform-style:preserve-3d;/*设置为3D的空间*/
+				transition:2s;/*动画过渡*/
+				transform-origin:50% 50% -101px;
+			}
+			#cube div{
+				position:absolute;/*绝对定位*/
+				left:0;/*距离参考物左端的距离*/
+				top:0;/*距离参考物上端的距离*/
+				width:200px;/*宽度*/
+				height:200px;/*高度*/
+				border:2px solid red;
+			}
+			/*nth-child(1)结构伪类选择器 */
+			#cube div:nth-child(1){
+				top:-202px;
+				/*默认的旋转中心:X方向 Y方向 Z方向
+				transform-origin:50% 50% 0;*/
+				transform-origin:bottom;/*围绕下边转*/
+				/*css3变换:围绕X轴旋转90度*/
+				transform:rotateX(90deg);
+			}
+			#cube div:nth-child(2){
+				top:202px;
+				transform-origin:top;
+				transform:rotateX(-90deg);
+			}
+			#cube div:nth-child(3){
+				left:-202px;
+				transform-origin:right;
+				/*css3变换:围绕Y轴旋转-90度*/
+				transform:rotateY(-90deg);
+			}
+			#cube div:nth-child(4){
+				left:202px;
+				transform-origin:left;
+				transform:rotateY(90deg);
+			}
+			#cube div:nth-child(5){
+				
+			}
+			#cube div:nth-child(6){
+				/*css3变换:围绕Z轴向里移动*/
+				transform:translateZ(-202px);
+			}
+			
+			#cube:hover{/*动态伪类：鼠标移上去旋转*/
+				transform:rotateY(360deg);
+			}
+		</style>
+	</head>
+	<body><!--身体-->
+		<!--盒子模型标签div: 宽度 高度 位置(css样式)-->
+		<div id="cube"><!--id="自定义的名称" 命名规范(见名知意:用有语义的英文单词)-->
+			<div>上</div>
+			<div>下</div>
+			<div>左</div>
+			<div>右</div>
+			<div>前</div>
+			<div>后</div>
+		</div>
+	</body>
+</html>
