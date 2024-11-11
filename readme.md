@@ -1,10 +1,3 @@
-
-rededd 
-sda d 
-sd 
- 
-
-
 ----------
 
 # <i class="fas fa-sitema😀p"></i><i class="fas fa-sitemap" style="color: #12AA9C"></i>架构设计
